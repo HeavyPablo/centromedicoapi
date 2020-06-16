@@ -16,6 +16,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/perfil")
 @Slf4j
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PerfilController {
 
     @Autowired

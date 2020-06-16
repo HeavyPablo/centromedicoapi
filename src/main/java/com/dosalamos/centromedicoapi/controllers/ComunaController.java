@@ -16,6 +16,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/comuna")
 @Slf4j
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ComunaController {
 
     @Autowired

@@ -18,6 +18,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/sucursal")
 @Slf4j
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class SucursalController {
 
     @Autowired

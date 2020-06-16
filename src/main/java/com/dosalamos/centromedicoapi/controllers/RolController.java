@@ -16,6 +16,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/rol")
 @Slf4j
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class RolController {
 
     @Autowired

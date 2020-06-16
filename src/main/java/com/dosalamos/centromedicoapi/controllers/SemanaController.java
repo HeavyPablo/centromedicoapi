@@ -16,6 +16,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/semana")
 @Slf4j
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class SemanaController {
 
     @Autowired

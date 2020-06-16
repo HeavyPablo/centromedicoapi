@@ -18,6 +18,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/agenda")
 @Slf4j
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class AgendaController {
 
     @Autowired

@@ -16,6 +16,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/boleta")
 @Slf4j
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class BoletaController {
 
     @Autowired

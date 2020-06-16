@@ -20,6 +20,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/medico")
 @Slf4j
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class MedicoController {
 
     @Autowired

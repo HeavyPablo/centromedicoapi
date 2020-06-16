@@ -16,6 +16,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/solicitud")
 @Slf4j
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class SolicitudController {
 
     @Autowired

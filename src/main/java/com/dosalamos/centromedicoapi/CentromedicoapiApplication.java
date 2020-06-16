@@ -9,5 +9,4 @@ public class CentromedicoapiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CentromedicoapiApplication.class, args);
 	}
-
 }

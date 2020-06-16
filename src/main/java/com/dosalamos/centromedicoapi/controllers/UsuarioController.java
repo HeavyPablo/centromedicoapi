@@ -1,8 +1,10 @@
 package com.dosalamos.centromedicoapi.controllers;
 
+import com.dosalamos.centromedicoapi.models.Medico;
 import com.dosalamos.centromedicoapi.models.Perfil;
 import com.dosalamos.centromedicoapi.models.Rol;
 import com.dosalamos.centromedicoapi.models.Usuario;
+import com.dosalamos.centromedicoapi.services.MedicoService;
 import com.dosalamos.centromedicoapi.services.PerfilService;
 import com.dosalamos.centromedicoapi.services.RolService;
 import com.dosalamos.centromedicoapi.services.UsuarioService;
@@ -20,6 +22,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/usuario")
 @Slf4j
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UsuarioController {
 
     @Autowired
@@ -28,6 +31,8 @@ public class UsuarioController {
     private RolService rolService;
     @Autowired
     private PerfilService perfilService;
+    @Autowired
+    private MedicoService medicoService;
 
     @GetMapping
     public ResponseEntity<List<Usuario>> getAll() {
@@ -38,6 +43,15 @@ public class UsuarioController {
     public ResponseEntity<Usuario> getById(@PathVariable String id) {
         try {
             return ResponseEntity.ok(usuarioService.findById(Integer.parseInt(id)).get());
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    @GetMapping("/{nombreUsuario}")
+    public ResponseEntity<Usuario> getByNombreUsuario(@PathVariable String nombreUsuario) {
+        try {
+            return ResponseEntity.ok(usuarioService.findByNombreUsuario(nombreUsuario).get());
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
         }
