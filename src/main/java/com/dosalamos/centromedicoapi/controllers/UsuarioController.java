@@ -44,16 +44,16 @@ public class UsuarioController {
         try {
             return ResponseEntity.ok(usuarioService.findById(Integer.parseInt(id)).get());
         } catch (Exception e) {
-            return ResponseEntity.badRequest().build();
+            return null;
         }
     }
 
-    @GetMapping("/{nombreUsuario}")
+    @GetMapping("/nombreUsuario/{nombreUsuario}")
     public ResponseEntity<Usuario> getByNombreUsuario(@PathVariable String nombreUsuario) {
         try {
             return ResponseEntity.ok(usuarioService.findByNombreUsuario(nombreUsuario).get());
         } catch (Exception e) {
-            return ResponseEntity.badRequest().build();
+            return null;
         }
     }
 
