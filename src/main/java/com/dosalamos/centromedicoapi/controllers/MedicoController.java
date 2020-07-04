@@ -52,12 +52,10 @@ public class MedicoController {
             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
             Usuario usuario = usuarioService.findById(Integer.parseInt(body.get("usuario"))).get();
-            Agenda agenda = agendaService.findById(Integer.parseInt(body.get("agenda"))).get();
 
             Medico medico = new Medico(
                     body.get("profesion"),
                     usuario,
-                    agenda,
                     dateFormat.format(date),
                     dateFormat.format(date)
             );

@@ -16,9 +16,6 @@ public class Medico {
     @ManyToOne
     private Usuario usuario;
 
-    @ManyToOne
-    private Agenda agenda;
-
     @Column(nullable = false)
     private String fechaCreacion;
 
@@ -28,10 +25,9 @@ public class Medico {
     public Medico() {
     }
 
-    public Medico(String profesion, Usuario usuario, Agenda agenda, String fechaCreacion, String fechaActualizacion) {
+    public Medico(String profesion, Usuario usuario, String fechaCreacion, String fechaActualizacion) {
         this.profesion = profesion;
         this.usuario = usuario;
-        this.agenda = agenda;
         this.fechaCreacion = fechaCreacion;
         this.fechaActualizacion = fechaActualizacion;
     }
@@ -58,14 +54,6 @@ public class Medico {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
-    }
-
-    public Agenda getAgenda() {
-        return agenda;
-    }
-
-    public void setAgenda(Agenda agenda) {
-        this.agenda = agenda;
     }
 
     public String getFechaCreacion() {

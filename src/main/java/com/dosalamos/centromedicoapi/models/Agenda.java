@@ -22,6 +22,9 @@ public class Agenda {
     @ManyToOne
     private Semana semana;
 
+    @ManyToOne
+    private Medico medico;
+
     @Column(nullable = false)
     private String fechaCreacion;
 
@@ -31,11 +34,12 @@ public class Agenda {
     public Agenda() {
     }
 
-    public Agenda(String fecha, String estado, String dia, Semana semana, String fechaCreacion, String fechaActualizacion) {
+    public Agenda(String fecha, String estado, String dia, Semana semana, Medico medico, String fechaCreacion, String fechaActualizacion) {
         this.fecha = fecha;
         this.estado = estado;
         this.dia = dia;
         this.semana = semana;
+        this.medico = medico;
         this.fechaCreacion = fechaCreacion;
         this.fechaActualizacion = fechaActualizacion;
     }
@@ -78,6 +82,14 @@ public class Agenda {
 
     public void setSemana(Semana semana) {
         this.semana = semana;
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
     }
 
     public String getFechaCreacion() {

@@ -1,6 +1,7 @@
 package com.dosalamos.centromedicoapi.services;
 
 import com.dosalamos.centromedicoapi.models.Agenda;
+import com.dosalamos.centromedicoapi.models.Medico;
 import com.dosalamos.centromedicoapi.repositories.AgendaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,4 +26,6 @@ public class AgendaService {
     public Agenda save(Agenda agenda) {
         return agendaRepository.save(agenda);
     }
+
+    public List<Agenda> findByMedico(Medico medico) { return agendaRepository.findByMedico(medico); }
 }
